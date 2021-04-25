@@ -25,11 +25,22 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        switch component {
+        case 0:
+            return 3
+        case 1:
+            return 4
+        case 2:
+            return 5
+        default:
+            return 0
+        }
+        
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Hello"
+        return "Hello:\(row)"
     }
     
     
