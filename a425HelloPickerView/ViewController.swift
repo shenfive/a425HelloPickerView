@@ -11,8 +11,16 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 
     @IBOutlet weak var pickview: UIPickerView!
     
+    var astrological = ["請選擇你的星座","白羊宮","金牛宮","雙子宮","巨蟹宮","獅子宮","處女宮","天秤宮","天蠍宮","射手宮","摩羯宮","水瓶宮","雙魚宮"]
+    var bloudType = ["請選擇你的血型","A","B","O","AB"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+
+        
         
         pickview.dataSource = self
         pickview.delegate = self
@@ -21,17 +29,15 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 
     //MARK: UIPickerViewDataSource && Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
-            return 3
+            return astrological.count
         case 1:
-            return 4
-        case 2:
-            return 5
+            return bloudType.count
         default:
             return 0
         }
@@ -40,7 +46,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Hello:\(row)"
+        switch component {
+        case 0:
+            return astrological[row]
+        case 1:
+            return bloudType[row]
+        default:
+            return ""
+        }
     }
     
     
