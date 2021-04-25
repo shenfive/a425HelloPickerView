@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="897.10144927536237" y="53.571428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Page2 View Controller-->
         <scene sceneID="KbC-or-vfe">
             <objects>
-                <viewController id="s5T-00-2Xu" sceneMemberID="viewController">
+                <viewController id="s5T-00-2Xu" customClass="Page2ViewController" customModule="a425HelloPickerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iif-tI-dne">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
