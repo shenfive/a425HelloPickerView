@@ -56,6 +56,17 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        print("ast:\(pickerView.selectedRow(inComponent: 0))")
+        print("bld:\(pickerView.selectedRow(inComponent: 1))")
+        
+        if pickerView.selectedRow(inComponent: 0) != 0 &&
+            pickview.selectedRow(inComponent: 1) != 0{
+            performSegue(withIdentifier: "goPage2", sender: self)
+        }
+    }
+    
     
 
 }
