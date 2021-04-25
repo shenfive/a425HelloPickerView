@@ -31,7 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Fc-UU-d1y"/>
                     <connections>
-                        <outlet property="pickview" destination="3SK-FY-Pj1" id="E01-kb-jWa"/>
+                        <outlet property="thePicerkview" destination="3SK-FY-Pj1" id="E01-kb-jWa"/>
                         <segue destination="s5T-00-2Xu" kind="show" identifier="goPage2" id="kb0-tu-QQa"/>
                     </connections>
                 </viewController>
@@ -46,14 +46,26 @@
                     <view key="view" contentMode="scaleToFill" id="Iif-tI-dne">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDT-p9-PsO">
+                                <rect key="frame" x="20" y="129" width="239" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yuW-CW-ZdC"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="f1l-zi-Vcv"/>
+                    <connections>
+                        <outlet property="theLabel" destination="LDT-p9-PsO" id="9rZ-a1-dPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlA-Lf-aoJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="54"/>
+            <point key="canvasLocation" x="1800.0000000000002" y="53.571428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C8E-hO-uc8">

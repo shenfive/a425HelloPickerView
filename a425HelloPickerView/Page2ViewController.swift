@@ -9,9 +9,15 @@ import UIKit
 
 class Page2ViewController: UIViewController {
 
+    @IBOutlet weak var theLabel: UILabel!
+    var bld = ""
+    var ast = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("My VC")
+        print("My VC \(bld) \(ast)")
+        theLabel.text = "\(bld) \(ast) 讚"
+        
         
     }
 

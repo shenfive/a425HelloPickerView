@@ -9,26 +9,33 @@ import UIKit
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
 
-    @IBOutlet weak var pickview: UIPickerView!
+    @IBOutlet weak var thePicerkview: UIPickerView!
     
     var astrological = ["請選擇你的星座","白羊宮","金牛宮","雙子宮","巨蟹宮","獅子宮","處女宮","天秤宮","天蠍宮","射手宮","摩羯宮","水瓶宮","雙魚宮"]
     var bloudType = ["請選擇你的血型","A","B","O","AB"]
     
+    var numberOfCompnet = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-
-        
-        
-        pickview.dataSource = self
-        pickview.delegate = self
+        thePicerkview.dataSource = self
+        thePicerkview.delegate = self
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? Page2ViewController{
+            vc.ast = astrological[thePicerkview.selectedRow(inComponent: 0)]
+            vc.bld = bloudType[thePicerkview.selectedRow(inComponent: 1)]
+        }
+    }
+    
+    
 
     //MARK: UIPickerViewDataSource && Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        print("noc:\(numberOfCompnet)")
+        
         return 2
     }
     
@@ -61,10 +68,23 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         print("ast:\(pickerView.selectedRow(inComponent: 0))")
         print("bld:\(pickerView.selectedRow(inComponent: 1))")
         
-        if pickerView.selectedRow(inComponent: 0) != 0 &&
-            pickview.selectedRow(inComponent: 1) != 0{
-            performSegue(withIdentifier: "goPage2", sender: self)
-        }
+        
+        
+//        if numberOfCompnet == 2 {
+            
+            if pickerView.selectedRow(inComponent: 0) != 0 &&
+                thePicerkview.selectedRow(inComponent: 1) != 0{
+                performSegue(withIdentifier: "goPage2", sender: self)
+            }
+//        }
+//
+//        if pickerView.selectedRow(inComponent: 0) != 0 {
+//            numberOfCompnet = 2
+//            pickerView.reloadInputViews()
+//
+//        }
+        
+        
     }
     
     
