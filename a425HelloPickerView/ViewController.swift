@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIPickerViewDataSource {
+class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
 
     @IBOutlet weak var pickview: UIPickerView!
     
@@ -15,16 +15,21 @@ class ViewController: UIViewController,UIPickerViewDataSource {
         super.viewDidLoad()
         
         pickview.dataSource = self
+        pickview.delegate = self
         
     }
 
-    //MARK: UIPickerViewDataSource
+    //MARK: UIPickerViewDataSource && Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 5
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "Hello"
     }
     
     
