@@ -36,7 +36,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         print("noc:\(numberOfCompnet)")
         
-        return 2
+        return numberOfCompnet
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -65,24 +65,24 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        print("ast:\(pickerView.selectedRow(inComponent: 0))")
-        print("bld:\(pickerView.selectedRow(inComponent: 1))")
+//        print("ast:\(pickerView.selectedRow(inComponent: 0))")
+//        print("bld:\(pickerView.selectedRow(inComponent: 1))")
         
         
         
-//        if numberOfCompnet == 2 {
+        if numberOfCompnet == 2 {
             
             if pickerView.selectedRow(inComponent: 0) != 0 &&
                 thePicerkview.selectedRow(inComponent: 1) != 0{
                 performSegue(withIdentifier: "goPage2", sender: self)
             }
-//        }
-//
-//        if pickerView.selectedRow(inComponent: 0) != 0 {
-//            numberOfCompnet = 2
-//            pickerView.reloadInputViews()
-//
-//        }
+        }
+
+        if pickerView.selectedRow(inComponent: 0) != 0 {
+            numberOfCompnet = 2
+            thePicerkview.reloadAllComponents()
+
+        }
         
         
     }
